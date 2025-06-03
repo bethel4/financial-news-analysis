@@ -1,2 +1,2 @@
 echo -e "__pycache__/\n*.pyc\n.env\n.vscode/\n.DS_Store\ndata/" > .gitignore
-/data
+/datadata/raw_analyst_ratings.csv
