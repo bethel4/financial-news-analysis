@@ -1,2 +1,7 @@
 echo -e "__pycache__/\n*.pyc\n.env\n.vscode/\n.DS_Store\ndata/" > .gitignore
-/datadata/raw_analyst_ratings.csv
+
+.venv/
+.vscode/PythonImportHelper-v2-Completion.json
+**/.ipynb_checkpoints/
+**/__pycache__/
+

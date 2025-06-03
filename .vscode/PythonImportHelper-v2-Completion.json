@@ -1,0 +1,482 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "TextBlob",
+        "importPath": "textblob",
+        "description": "textblob",
+        "isExtraImport": true,
+        "detail": "textblob",
+        "documentation": {}
+    },
+    {
+        "label": "TextBlob",
+        "importPath": "textblob",
+        "description": "textblob",
+        "isExtraImport": true,
+        "detail": "textblob",
+        "documentation": {}
+    },
+    {
+        "label": "SentimentCorrelationAnalyzer",
+        "importPath": "scripts.news_stock_correlation",
+        "description": "scripts.news_stock_correlation",
+        "isExtraImport": true,
+        "detail": "scripts.news_stock_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "SentimentCorrelationAnalyzer",
+        "importPath": "scripts.news_stock_correlation",
+        "description": "scripts.news_stock_correlation",
+        "isExtraImport": true,
+        "detail": "scripts.news_stock_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "StockAnalyzer",
+        "importPath": "scripts.stock_analysis",
+        "description": "scripts.stock_analysis",
+        "isExtraImport": true,
+        "detail": "scripts.stock_analysis",
+        "documentation": {}
+    },
+    {
+        "label": "StockAnalyzer",
+        "importPath": "scripts.stock_analysis",
+        "description": "scripts.stock_analysis",
+        "isExtraImport": true,
+        "detail": "scripts.stock_analysis",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "getpass",
+        "importPath": "getpass",
+        "description": "getpass",
+        "isExtraImport": true,
+        "detail": "getpass",
+        "documentation": {}
+    },
+    {
+        "label": "OptionParser",
+        "importPath": "optparse",
+        "description": "optparse",
+        "isExtraImport": true,
+        "detail": "optparse",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "peewee",
+        "description": "peewee",
+        "isExtraImport": true,
+        "detail": "peewee",
+        "documentation": {}
+    },
+    {
+        "label": "print_",
+        "importPath": "peewee",
+        "description": "peewee",
+        "isExtraImport": true,
+        "detail": "peewee",
+        "documentation": {}
+    },
+    {
+        "label": "__version__",
+        "importPath": "peewee",
+        "description": "peewee",
+        "isExtraImport": true,
+        "detail": "peewee",
+        "documentation": {}
+    },
+    {
+        "label": "CockroachDatabase",
+        "importPath": "playhouse.cockroachdb",
+        "description": "playhouse.cockroachdb",
+        "isExtraImport": true,
+        "detail": "playhouse.cockroachdb",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "playhouse.reflection",
+        "description": "playhouse.reflection",
+        "isExtraImport": true,
+        "detail": "playhouse.reflection",
+        "documentation": {}
+    },
+    {
+        "label": "talib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "talib",
+        "description": "talib",
+        "detail": "talib",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.graph_objects",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.graph_objects",
+        "description": "plotly.graph_objects",
+        "detail": "plotly.graph_objects",
+        "documentation": {}
+    },
+    {
+        "label": "make_subplots",
+        "importPath": "plotly.subplots",
+        "description": "plotly.subplots",
+        "isExtraImport": true,
+        "detail": "plotly.subplots",
+        "documentation": {}
+    },
+    {
+        "label": "make_subplots",
+        "importPath": "plotly.subplots",
+        "description": "plotly.subplots",
+        "isExtraImport": true,
+        "detail": "plotly.subplots",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_sentiment",
+        "kind": 2,
+        "importPath": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "description": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "peekOfCode": "def calculate_sentiment(text: str) -> float:\n    \"\"\"Returns polarity score (-1 to 1) for a headline\"\"\"\n    return TextBlob(text).sentiment.polarity\ndef preprocess_news(news_df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Adds sentiment scores and formats the date column\"\"\"\n    news_df = news_df.copy()\n    news_df['date'] = pd.to_datetime(news_df['date'])\n    news_df['sentiment'] = news_df['headline'].apply(calculate_sentiment)\n    return news_df\ndef preprocess_stock(stock_df: pd.DataFrame) -> pd.DataFrame:",
+        "detail": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_news",
+        "kind": 2,
+        "importPath": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "description": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "peekOfCode": "def preprocess_news(news_df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Adds sentiment scores and formats the date column\"\"\"\n    news_df = news_df.copy()\n    news_df['date'] = pd.to_datetime(news_df['date'])\n    news_df['sentiment'] = news_df['headline'].apply(calculate_sentiment)\n    return news_df\ndef preprocess_stock(stock_df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Prepares stock data by parsing dates and calculating returns\"\"\"\n    stock_df = stock_df.copy()\n    stock_df['Date'] = pd.to_datetime(stock_df['Date'])",
+        "detail": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_stock",
+        "kind": 2,
+        "importPath": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "description": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "peekOfCode": "def preprocess_stock(stock_df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Prepares stock data by parsing dates and calculating returns\"\"\"\n    stock_df = stock_df.copy()\n    stock_df['Date'] = pd.to_datetime(stock_df['Date'])\n    stock_df = stock_df.sort_values('Date')\n    stock_df['return'] = stock_df['Close'].pct_change()\n    return stock_df\ndef merge_and_analyze(stock_df: pd.DataFrame, news_df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Merges news and stock by date and calculates correlation\"\"\"\n    # Group news by day and average sentiment",
+        "detail": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "merge_and_analyze",
+        "kind": 2,
+        "importPath": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "description": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "peekOfCode": "def merge_and_analyze(stock_df: pd.DataFrame, news_df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Merges news and stock by date and calculates correlation\"\"\"\n    # Group news by day and average sentiment\n    daily_sentiment = news_df.groupby(news_df['date'].dt.date)['sentiment'].mean().reset_index()\n    daily_sentiment.columns = ['Date', 'avg_sentiment']\n    daily_sentiment['Date'] = pd.to_datetime(daily_sentiment['Date'])\n    merged = pd.merge(stock_df, daily_sentiment, on='Date', how='inner')\n    merged.dropna(subset=['return', 'avg_sentiment'], inplace=True)\n    correlation = merged['avg_sentiment'].corr(merged['return'])\n    return merged, correlation",
+        "detail": ".ipynb_checkpoints.news_stock_correlation-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "stock_files",
+        "kind": 5,
+        "importPath": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "description": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "peekOfCode": "stock_files = {\n    \"META\": \"data/META_historical_data.csv\",\n    \"TSLA\": \"data/TSLA_historical_data.csv\",\n    \"MSFT\": \"data/MSFT_historical_data.csv\",\n    \"AAPL\": \"data/AAPL_historical_data.csv\",\n    \"AMZN\": \"data/AMZN_historical_data.csv\",\n    \"NVDA\": \"data/NVDA_historical_data.csv\",\n    \"GOOG\": \"data/GOOG_historical_data.csv\",\n}\n# Load the main news file",
+        "detail": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "news_df",
+        "kind": 5,
+        "importPath": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "description": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "peekOfCode": "news_df = pd.read_csv(\"..data/raw_analyst_ratings.csv.csv\")\nnews_df['date'] = pd.to_datetime(news_df['date'], format='ISO8601').dt.date\n# Loop through each ticker and analyze correlation\nfor ticker, filepath in stock_files.items():\n    print(f\"\\nAnalyzing {ticker}...\")\n    stock_df = pd.read_csv(filepath)\n    stock_df['Date'] = pd.to_datetime(stock_df['Date'])\n    stock_df = stock_df.sort_values(\"Date\")\n    news_ticker = news_df[news_df['stock'] == ticker]\n    analyzer = SentimentCorrelationAnalyzer(ticker)",
+        "detail": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "news_df['date']",
+        "kind": 5,
+        "importPath": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "description": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "peekOfCode": "news_df['date'] = pd.to_datetime(news_df['date'], format='ISO8601').dt.date\n# Loop through each ticker and analyze correlation\nfor ticker, filepath in stock_files.items():\n    print(f\"\\nAnalyzing {ticker}...\")\n    stock_df = pd.read_csv(filepath)\n    stock_df['Date'] = pd.to_datetime(stock_df['Date'])\n    stock_df = stock_df.sort_values(\"Date\")\n    news_ticker = news_df[news_df['stock'] == ticker]\n    analyzer = SentimentCorrelationAnalyzer(ticker)\n    result_df, correlation = analyzer.run_correlation_analysis(stock_df, news_ticker)",
+        "detail": ".ipynb_checkpoints.run_news_correlation-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "stock_files",
+        "kind": 5,
+        "importPath": ".ipynb_checkpoints.run_stock_analysis-checkpoint",
+        "description": ".ipynb_checkpoints.run_stock_analysis-checkpoint",
+        "peekOfCode": "stock_files = {\n    \"META\": \"data/META_historical_data.csv\",\n    \"TSLA\": \"data/GOOG_historical_data.csv\",\n    \"MSFT\": \"data/MSFT_historical_data.csv\",\n    \"AAPL\": \"data/AAPL_historical_data.csv\",\n    \"AMZN\": \"data/AMZN_historical_data.csv\",\n    \"NVDA\": \"data/NVDA_historical_data.csv\",\n    \"GOOG\": \"data/GOOG_historical_data.csv\",\n}\n# Run analysis for each",
+        "detail": ".ipynb_checkpoints.run_stock_analysis-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "kind": 6,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "class BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "UnknownField",
+        "kind": 6,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "class UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],\n    MySQLDatabase: ['mysql', 'mysqldb'],\n    PostgresqlDatabase: ['postgres', 'postgresql'],\n    SqliteDatabase: ['sqlite', 'sqlite3'],\n}\nDATABASE_MAP = dict((value, key)",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "make_introspector",
+        "kind": 2,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "def make_introspector(database_type, database_name, **kwargs):\n    if database_type not in DATABASE_MAP:\n        err('Unrecognized database, must be one of: %s' %\n            ', '.join(DATABASE_MAP.keys()))\n        sys.exit(1)\n    schema = kwargs.pop('schema', None)\n    DatabaseClass = DATABASE_MAP[database_type]\n    db = DatabaseClass(database_name, **kwargs)\n    return Introspector.from_database(db, schema=schema)\ndef print_models(introspector, tables=None, preserve_order=False,",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "print_models",
+        "kind": 2,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "def print_models(introspector, tables=None, preserve_order=False,\n                 include_views=False, ignore_unknown=False, snake_case=True):\n    database = introspector.introspect(table_names=tables,\n                                       include_views=include_views,\n                                       snake_case=snake_case)\n    db_kwargs = introspector.get_database_kwargs()\n    header = HEADER % (\n        introspector.get_additional_imports(),\n        introspector.get_database_class().__name__,\n        introspector.get_database_name(),",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "print_header",
+        "kind": 2,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "def print_header(cmd_line, introspector):\n    timestamp = datetime.datetime.now()\n    print_('# Code generated by:')\n    print_('# python -m pwiz %s' % cmd_line)\n    print_('# Date: %s' % timestamp.strftime('%B %d, %Y %I:%M%p'))\n    print_('# Database: %s' % introspector.get_database_name())\n    print_('# Peewee version: %s' % peewee_version)\n    print_('')\ndef err(msg):\n    sys.stderr.write('\\033[91m%s\\033[0m\\n' % msg)",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "err",
+        "kind": 2,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "def err(msg):\n    sys.stderr.write('\\033[91m%s\\033[0m\\n' % msg)\n    sys.stderr.flush()\ndef get_option_parser():\n    parser = OptionParser(usage='usage: %prog [options] database_name')\n    ao = parser.add_option\n    ao('-H', '--host', dest='host')\n    ao('-p', '--port', dest='port', type='int')\n    ao('-u', '--user', dest='user')\n    ao('-P', '--password', dest='password', action='store_true')",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "get_option_parser",
+        "kind": 2,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "def get_option_parser():\n    parser = OptionParser(usage='usage: %prog [options] database_name')\n    ao = parser.add_option\n    ao('-H', '--host', dest='host')\n    ao('-p', '--port', dest='port', type='int')\n    ao('-u', '--user', dest='user')\n    ao('-P', '--password', dest='password', action='store_true')\n    engines = sorted(DATABASE_MAP)\n    ao('-e', '--engine', dest='engine', choices=engines,\n       help=('Database type, e.g. sqlite, mysql, postgresql or cockroachdb. '",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "get_connect_kwargs",
+        "kind": 2,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "def get_connect_kwargs(options):\n    ops = ('host', 'port', 'user', 'schema')\n    kwargs = dict((o, getattr(options, o)) for o in ops if getattr(options, o))\n    if options.password:\n        kwargs['password'] = getpass()\n    return kwargs\nif __name__ == '__main__':\n    raw_argv = sys.argv\n    parser = get_option_parser()\n    options, args = parser.parse_args()",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "HEADER",
+        "kind": 5,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "HEADER = \"\"\"from peewee import *%s\ndatabase = %s('%s'%s)\n\"\"\"\nBASE_MODEL = \"\"\"\\\nclass BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "kind": 5,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "database = %s('%s'%s)\n\"\"\"\nBASE_MODEL = \"\"\"\\\nclass BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_MODEL",
+        "kind": 5,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "BASE_MODEL = \"\"\"\\\nclass BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "UNKNOWN_FIELD",
+        "kind": 5,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "UNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],\n    MySQLDatabase: ['mysql', 'mysqldb'],\n    PostgresqlDatabase: ['postgres', 'postgresql'],\n    SqliteDatabase: ['sqlite', 'sqlite3'],\n}",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_ALIASES",
+        "kind": 5,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "DATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],\n    MySQLDatabase: ['mysql', 'mysqldb'],\n    PostgresqlDatabase: ['postgres', 'postgresql'],\n    SqliteDatabase: ['sqlite', 'sqlite3'],\n}\nDATABASE_MAP = dict((value, key)\n                    for key in DATABASE_ALIASES\n                    for value in DATABASE_ALIASES[key])\ndef make_introspector(database_type, database_name, **kwargs):",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_MAP",
+        "kind": 5,
+        "importPath": ".venv.bin.pwiz",
+        "description": ".venv.bin.pwiz",
+        "peekOfCode": "DATABASE_MAP = dict((value, key)\n                    for key in DATABASE_ALIASES\n                    for value in DATABASE_ALIASES[key])\ndef make_introspector(database_type, database_name, **kwargs):\n    if database_type not in DATABASE_MAP:\n        err('Unrecognized database, must be one of: %s' %\n            ', '.join(DATABASE_MAP.keys()))\n        sys.exit(1)\n    schema = kwargs.pop('schema', None)\n    DatabaseClass = DATABASE_MAP[database_type]",
+        "detail": ".venv.bin.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "StockAnalyzer",
+        "kind": 6,
+        "importPath": "scripts..ipynb_checkpoints.stock_analysis-checkpoint",
+        "description": "scripts..ipynb_checkpoints.stock_analysis-checkpoint",
+        "peekOfCode": "class StockAnalyzer:\n    def __init__(self, stock_name: str, filepath: str):\n        self.stock_name = stock_name\n        self.filepath = filepath\n        self.data = self.load_data()\n    def load_data(self) -> pd.DataFrame:\n        df = pd.read_csv(self.filepath, parse_dates=[\"Date\"])\n        df.sort_values(\"Date\", inplace=True)\n        df.reset_index(drop=True, inplace=True)\n        return df",
+        "detail": "scripts..ipynb_checkpoints.stock_analysis-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "SentimentCorrelationAnalyzer",
+        "kind": 6,
+        "importPath": "scripts.news_stock_correlation",
+        "description": "scripts.news_stock_correlation",
+        "peekOfCode": "class SentimentCorrelationAnalyzer:\n    def __init__(self, stock_df: pd.DataFrame, news_df: pd.DataFrame):\n        self.stock_df = stock_df.copy()\n        self.news_df = news_df.copy()\n    def calculate_sentiment(self):\n        self.news_df['date'] = pd.to_datetime(self.news_df['date'], format='ISO8601', errors='coerce')\n        self.news_df['sentiment'] = self.news_df['headline'].apply(lambda x: TextBlob(str(x)).sentiment.polarity)\n        daily_sentiment = self.news_df.groupby(self.news_df['date'].dt.date)['sentiment'].mean()\n        daily_sentiment.index = pd.to_datetime(daily_sentiment.index)\n        return daily_sentiment",
+        "detail": "scripts.news_stock_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "StockAnalyzer",
+        "kind": 6,
+        "importPath": "scripts.stock_analysis",
+        "description": "scripts.stock_analysis",
+        "peekOfCode": "class StockAnalyzer:\n    def __init__(self, stock_name: str, filepath: str):\n        self.stock_name = stock_name\n        self.filepath = filepath\n        self.data = self.load_data()\n    def load_data(self) -> pd.DataFrame:\n        df = pd.read_csv(self.filepath, parse_dates=[\"Date\"])\n        df.sort_values(\"Date\", inplace=True)\n        df.reset_index(drop=True, inplace=True)\n        return df",
+        "detail": "scripts.stock_analysis",
+        "documentation": {}
+    },
+    {
+        "label": "plot_sentiment_vs_return",
+        "kind": 2,
+        "importPath": "run_news_correlation",
+        "description": "run_news_correlation",
+        "peekOfCode": "def plot_sentiment_vs_return(aligned_df, ticker):\n    fig, ax1 = plt.subplots(figsize=(12, 6))\n    ax1.set_title(f\"{ticker} - Daily Sentiment vs. Stock Return\")\n    ax1.set_xlabel(\"Date\")\n    ax1.plot(aligned_df.index, aligned_df['Sentiment'], color='blue', label='Sentiment')\n    ax1.set_ylabel(\"Sentiment\", color='blue')\n    ax1.tick_params(axis='y', labelcolor='blue')\n    ax2 = ax1.twinx()\n    ax2.plot(aligned_df.index, aligned_df['Return'], color='red', alpha=0.6, label='Return')\n    ax2.set_ylabel(\"Daily Return\", color='red')",
+        "detail": "run_news_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "plot_sentiment_return_scatter",
+        "kind": 2,
+        "importPath": "run_news_correlation",
+        "description": "run_news_correlation",
+        "peekOfCode": "def plot_sentiment_return_scatter(aligned_df, ticker):\n    plt.figure(figsize=(8, 6))\n    sns.scatterplot(data=aligned_df, x='Sentiment', y='Return')\n    plt.title(f\"{ticker} - Sentiment vs. Daily Return\")\n    plt.axhline(0, color='gray', linestyle='--')\n    plt.axvline(0, color='gray', linestyle='--')\n    plt.xlabel(\"Sentiment Score\")\n    plt.ylabel(\"Daily Stock Return\")\n    plt.grid(True)\n    plt.show()",
+        "detail": "run_news_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "stock_files",
+        "kind": 5,
+        "importPath": "run_news_correlation",
+        "description": "run_news_correlation",
+        "peekOfCode": "stock_files = {\n    \"META\": \"data/META_historical_data.csv\",\n    \"TSLA\": \"data/TSLA_historical_data.csv\",\n    \"MSFT\": \"data/MSFT_historical_data.csv\",\n    \"AAPL\": \"data/AAPL_historical_data.csv\",\n    \"AMZN\": \"data/AMZN_historical_data.csv\",\n    \"NVDA\": \"data/NVDA_historical_data.csv\",\n    \"GOOG\": \"data/GOOG_historical_data.csv\",\n}\n# Load the main news file",
+        "detail": "run_news_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "news_df",
+        "kind": 5,
+        "importPath": "run_news_correlation",
+        "description": "run_news_correlation",
+        "peekOfCode": "news_df = pd.read_csv(\"data/raw_analyst_ratings.csv\")\nnews_df['date'] = pd.to_datetime(news_df['date'], format='ISO8601').dt.date\ntickers = [\"META\", \"TSLA\", \"MSFT\", \"GOOGL\", \"AAPL\"]\n# Loop through each ticker and analyze correlation\nfor ticker in tickers:\n    print(f\"\\n Analyzing {ticker}...\")\n    news_ticker_df = news_df[news_df['stock'] == ticker]\n    stock_file = f\"data/{ticker}_historical_data.csv\"\n    if not os.path.exists(stock_file):\n        print(f\" Stock file for {ticker} not found at {stock_file}. Skipping.\")",
+        "detail": "run_news_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "news_df['date']",
+        "kind": 5,
+        "importPath": "run_news_correlation",
+        "description": "run_news_correlation",
+        "peekOfCode": "news_df['date'] = pd.to_datetime(news_df['date'], format='ISO8601').dt.date\ntickers = [\"META\", \"TSLA\", \"MSFT\", \"GOOGL\", \"AAPL\"]\n# Loop through each ticker and analyze correlation\nfor ticker in tickers:\n    print(f\"\\n Analyzing {ticker}...\")\n    news_ticker_df = news_df[news_df['stock'] == ticker]\n    stock_file = f\"data/{ticker}_historical_data.csv\"\n    if not os.path.exists(stock_file):\n        print(f\" Stock file for {ticker} not found at {stock_file}. Skipping.\")\n        continue",
+        "detail": "run_news_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "tickers",
+        "kind": 5,
+        "importPath": "run_news_correlation",
+        "description": "run_news_correlation",
+        "peekOfCode": "tickers = [\"META\", \"TSLA\", \"MSFT\", \"GOOGL\", \"AAPL\"]\n# Loop through each ticker and analyze correlation\nfor ticker in tickers:\n    print(f\"\\n Analyzing {ticker}...\")\n    news_ticker_df = news_df[news_df['stock'] == ticker]\n    stock_file = f\"data/{ticker}_historical_data.csv\"\n    if not os.path.exists(stock_file):\n        print(f\" Stock file for {ticker} not found at {stock_file}. Skipping.\")\n        continue\n    stock_df = pd.read_csv(stock_file)",
+        "detail": "run_news_correlation",
+        "documentation": {}
+    },
+    {
+        "label": "stock_files",
+        "kind": 5,
+        "importPath": "run_stock_analysis",
+        "description": "run_stock_analysis",
+        "peekOfCode": "stock_files = {\n    \"META\": \"data/META_historical_data.csv\",\n    \"TSLA\": \"data/GOOG_historical_data.csv\",\n    \"MSFT\": \"data/MSFT_historical_data.csv\",\n    \"AAPL\": \"data/AAPL_historical_data.csv\",\n    \"AMZN\": \"data/AMZN_historical_data.csv\",\n    \"NVDA\": \"data/NVDA_historical_data.csv\",\n    \"GOOG\": \"data/GOOG_historical_data.csv\",\n}\n# Run analysis for each",
+        "detail": "run_stock_analysis",
+        "documentation": {}
+    }
+]
